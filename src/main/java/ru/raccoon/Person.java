@@ -40,7 +40,11 @@ public class Person {
     }
 
     public OptionalInt getAge() {
-        return OptionalInt.of(age);
+        if (age < 0) {
+            return OptionalInt.empty();
+        } else {
+            return OptionalInt.of(age);
+        }
     }
 
     public String getAddress() {
@@ -64,7 +68,7 @@ public class Person {
     public String toString() {
         return "[" + name
                 + " " + surname
-                + " Возраст: " + (getAge().isPresent() && getAge().getAsInt() >= 0 ? getAge().getAsInt() : "unknown")
+                + " Возраст: " + (getAge().isPresent() ? getAge().getAsInt() : "unknown")
                 + " Адрес: " + (hasAddress() ? getAddress() : "unknown")
                 + "]";
     }
