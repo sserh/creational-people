@@ -1,7 +1,5 @@
 package ru.raccoon;
 
-import java.util.OptionalInt;
-
 public class PersonBuilder {
     private String name;
     private String surname;
