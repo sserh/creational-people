@@ -1,9 +1,11 @@
 package ru.raccoon;
 
+import java.util.OptionalInt;
+
 public class PersonBuilder {
     private String name;
     private String surname;
-    private int age = -1; //по умолчанию возраст не указан
+    private int age = -1;
     private String address;
 
     public PersonBuilder setName(String name) {
